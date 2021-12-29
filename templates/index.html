@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Document</title>
+</head>
+<body>
+<img src="/static/extruded plastic-1200x285.jpg" alt="header" width="450" height="200"><br>
+<h2>CC Data Collection</h2>
+<form action="/submit" method="post">
+    <label>Date :</label>
+    <input type="date" name="date"><br><br>
+    <label>CC started :</label>
+    <input id="ccStartTime" type="time" name="ccStartTime" value="00:00"><br><br>
+    <label for="line">Select Production Line:</label>
+    <select id="line" name="line">
+        <option value="V20">V20</option>
+        <option value="V200 Ep2">V200 Ep2</option>
+        <option value="V200 BF">V200 BF</option>
+    </select><br><br>
+    <label for="loaderName">Loader Name:</label>
+    <input type="text" id="loaderName" name="loaderName"><br>
+    <p>Whether CC happened during Shift change time?
+        <input type="radio" id="yes" name="shiftChangeTime" value="YES">
+        <label for="yes">Yes</label>
+        <input type="radio" id="no" name="shiftChangeTime" value="NO">
+        <label for="no">No</label>
+    </p>
+    <p>Whether regrind was used before CC?
+        <input type="radio" id="yes1" name="regrindUsed" value="YES">
+        <label for="yes1">Yes</label>
+        <input type="radio" id="no1" name="regrindUsed" value="NO">
+        <label for="no1">No</label>
+    </p>
+    <label for="rpm">RPM :</label>
+    <input type="number" id="rpm" name="rpm" min="0" max="40" step="0.05"><br><br>
+    <label for="lineSpeed">Line Speed :</label>
+    <input type="number" id="lineSpeed" name="lineSpeed" min="0" max="4" step="0.01"><br><br>
+    <label for="ccFrom">CC from :</label>
+    <select id="ccFrom" name="ccFrom">
+        <option value="BLUE_072">BLUE_072</option>
+        <option value="BLUE_280">BLUE_280</option>
+        <option value="BLUE_281">BLUE_281</option>
+        <option value="BLUE_282">BLUE_282</option>
+        <option value="BLUE_289">BLUE_289</option>
+        <option value="BLUE_293">BLUE_293</option>
+        <option value="BLACK">BLACK</option>
+        <option value="WHITE">WHITE</option>
+        <option value="BEIGE_7534">BEIGE_7534</option>
+        <option value="YEL_1235">YEL_1235</option>
+        <option value="YEL_116">YEL_116</option>
+        <option value="BROWN_181">BROWN_181</option>
+        <option value="WARM_RED">WARM_RED</option>
+        <option value="RED_1795">RED_1795</option>
+        <option value="RED_1805">RED_1805</option>
+        <option value="RED_485">RED_485</option>
+        <option value="RED_506">RED_506</option>
+        <option value="GREEN_340">GREEN_340</option>
+        <option value="GREEN_3298">GREEN_3298</option>
+        <option value="GREEN_321">GREEN_321</option>
+        <option value="GREEN_361">GREEN_361</option>
+        <option value="ORANGE_021">ORANGE_021</option>
+        <option value="ORANGE_1505">ORANGE_1505</option>
+        <option value="GRAY_CG8">GRAY_CG8</option>
+        <option value="GRAY_CG6">GRAY_CG6</option>
+        <option value="NATURAL">NATURAL</option>
+        <option value="BLU_309">BLU_309</option>
+        <option value="BLUE_2935">BLUE_2935</option>
+        <option value="BLU_298">BLU_298</option>
+        <option value="BLU_287">BLU_287</option>
+        <option value="GREEN_355">GREEN_355</option>
+        <option value="GREEN_7735">GREEN_7735</option>
+    </select><br><br>
+    <label for="ccTo">CC to :</label>
+    <select id="ccTo" name="ccTo">
+        <option value="BLUE_072">BLUE_072</option>
+        <option value="BLUE_280">BLUE_280</option>
+        <option value="BLUE_281">BLUE_281</option>
+        <option value="BLUE_282">BLUE_282</option>
+        <option value="BLUE_289">BLUE_289</option>
+        <option value="BLUE_293">BLUE_293</option>
+        <option value="BLACK">BLACK</option>
+        <option value="WHITE">WHITE</option>
+        <option value="BEIGE_7534">BEIGE_7534</option>
+        <option value="YEL_1235">YEL_1235</option>
+        <option value="YEL_116">YEL_116</option>
+        <option value="BROWN_181">BROWN_181</option>
+        <option value="WARM_RED">WARM_RED</option>
+        <option value="RED_1795">RED_1795</option>
+        <option value="RED_1805">RED_1805</option>
+        <option value="RED_485">RED_485</option>
+        <option value="RED_506">RED_506</option>
+        <option value="GREEN_340">GREEN_340</option>
+        <option value="GREEN_3298">GREEN_3298</option>
+        <option value="GREEN_321">GREEN_321</option>
+        <option value="GREEN_361">GREEN_361</option>
+        <option value="ORANGE_021">ORANGE_021</option>
+        <option value="ORANGE_1505">ORANGE_1505</option>
+        <option value="GRAY_CG8">GRAY_CG8</option>
+        <option value="GRAY_CG6">GRAY_CG6</option>
+        <option value="NATURAL">NATURAL</option>
+        <option value="BLU_309">BLU_309</option>
+        <option value="BLUE_2935">BLUE_2935</option>
+        <option value="BLU_298">BLU_298</option>
+        <option value="BLU_287">BLU_287</option>
+        <option value="GREEN_355">GREEN_355</option>
+        <option value="GREEN_7735">GREEN_7735</option>
+    </select><br><br>
+    <label for="ccRej">CC Rejection :</label>
+    <input type="number" id="ccRej" name="ccRej"><br><br>
+    <input type="submit" value="Submit Report"/>
+</form>
+</body>
+</html>
