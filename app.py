@@ -4,8 +4,14 @@ import psycopg2
 
 app = Flask(__name__)
 
-# app.config['SQLALCHEMY_DATABASE_URI']='postgresql://postgres:post123@localhost/CC_data_from_Webapp'
-app.config['SQLALCHEMY_DATABASE_URI']='postgres://vpeqshfclyduif:3a1c6f963c3b4390196e86074be4da2bc0f9d97084a8884c6db36dbe91b15fd8@ec2-52-70-205-234.compute-1.amazonaws.com:5432/d50n95dk857dq9'
+ENV = 'dev'
+
+if ENV == 'dev':
+    app.debug = True
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:post123@localhost/CC_data_from_Webapp'
+else:
+    app.debug = False
+    app.config['SQLALCHEMY_DATABASE_URI']='postgres://vpeqshfclyduif:3a1c6f963c3b4390196e86074be4da2bc0f9d97084a8884c6db36dbe91b15fd8@ec2-52-70-205-234.compute-1.amazonaws.com:5432/d50n95dk857dq9'
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
@@ -69,4 +75,4 @@ def submit():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
