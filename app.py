@@ -1,6 +1,7 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, url_for
 from flask_sqlalchemy import SQLAlchemy
 import psycopg2
+import os
 
 app = Flask(__name__)
 
@@ -11,7 +12,8 @@ if ENV == 'dev':
     app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:post123@localhost/CC_data_from_Webapp'
 else:
     app.debug = False
-    app.config['SQLALCHEMY_DATABASE_URI']='postgres://vpeqshfclyduif:3a1c6f963c3b4390196e86074be4da2bc0f9d97084a8884c6db36dbe91b15fd8@ec2-52-70-205-234.compute-1.amazonaws.com:5432/d50n95dk857dq9'
+    app.config['SECRET_KEY'] = 'secret'
+    app.config['SQLALCHEMY_DATABASE_URI']=os.environ.get('DATABASE_URL')
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
