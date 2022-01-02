@@ -13,7 +13,7 @@ if ENV == 'dev':
 else:
     app.debug = False
     app.config['SECRET_KEY'] = 'secret'
-    app.config['SQLALCHEMY_DATABASE_URI']=os.environ.get('DATABASE_URL')
+    app.config['SQLALCHEMY_DATABASE_URI']=os.environ.get('DATABASE_URL?sslmode=require').replace('postgres://', 'postgresql://')
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
