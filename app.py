@@ -21,7 +21,7 @@ db = SQLAlchemy(app)
 
 class CCdata(db.Model):
 
-    def __init__(self, date, ccStartTime, line, loaderName, shiftChangeTime, rpm, lineSpeed, regrindUsed, ccFrom, ccTo, ccRej):
+    def __init__(self, date, ccStartTime, line, loaderName, shiftChangeTime, rpm, lineSpeed, regrindUsed, shadeIssue, dosingIssue, ccFrom, ccTo, ccRej):
         self.date = date
         self.ccStartTime = ccStartTime
         self.line = line
@@ -30,6 +30,8 @@ class CCdata(db.Model):
         self.rpm = rpm
         self.lineSpeed = lineSpeed
         self.regrindUsed = regrindUsed
+        self.shadeIssue = shadeIssue
+        self.dosingIssue = dosingIssue
         self.ccFrom = ccFrom
         self.ccTo = ccTo
         self.ccRej = ccRej
@@ -44,6 +46,8 @@ class CCdata(db.Model):
     rpm = db.Column(db.Float)
     lineSpeed = db.Column(db.Float)
     regrindUsed = db.Column(db.String(5))
+    shadeIssue = db.Column(db.String(5))
+    dosingIssue = db.Column(db.String(5))
     ccFrom = db.Column(db.String(10))
     ccTo = db.Column(db.String(10))
     ccRej = db.Column(db.Integer)
@@ -67,10 +71,12 @@ def submit():
         rpm = request.form['rpm']
         lineSpeed = request.form['lineSpeed']
         regrindUsed = request.form['regrindUsed']
+        shadeIssue = request.form['shadeIssue']
+        dosingIssue = request.form['dosingIssue']
         ccFrom = request.form['ccFrom']
         ccTo = request.form['ccTo']
         ccRej = request.form['ccRej']
-        colorChange = CCdata(date, ccStartTime, line, loaderName, shiftChangeTime, rpm, lineSpeed, regrindUsed, ccFrom, ccTo, ccRej)
+        colorChange = CCdata(date, ccStartTime, line, loaderName, shiftChangeTime, rpm, lineSpeed, regrindUsed, shadeIssue, dosingIssue, ccFrom, ccTo, ccRej)
         db.session.add(colorChange)
         db.session.commit()
         return render_template('success.html', c1=ccFrom, c2=ccTo, cc=ccRej)
