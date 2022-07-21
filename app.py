@@ -12,7 +12,6 @@ if ENV == 'dev':
     app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:post123@localhost/CC_data_from_Webapp'
 else:
     app.debug = False
-    # establishing connection
     #app.config['SECRET_KEY'] = 'secret'
     #app.config['SQLALCHEMY_DATABASE_URI']='postgresql://vpeqshfclyduif:3a1c6f963c3b4390196e86074be4da2bc0f9d97084a8884c6db36dbe91b15fd8@ec2-52-70-205-234.compute-1.amazonaws.com:5432/d50n95dk857dq9'
     app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://qoqyavbvyfnayk:ab03c518f30737074be3da81c926175bbb82f7022bf6b62eefd49f6533bbf27d@ec2-34-235-198-25.compute-1.amazonaws.com:5432/d5a612laoule09'
