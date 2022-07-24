@@ -22,36 +22,6 @@
         <option value="V200 Ep2">V200 Ep2</option>
         <option value="V200 BF">V200 BF</option>
     </select><br><br>
-    <label for="loaderName">Loader Name:</label>
-    <input type="text" id="loaderName" name="loaderName"><br>
-    <p>Whether CC happened during Shift change time?
-        <input type="radio" id="yes" name="shiftChangeTime" value="YES">
-        <label for="yes">Yes</label>
-        <input type="radio" id="no" name="shiftChangeTime" value="NO">
-        <label for="no">No</label>
-    </p>
-    <p>Whether regrind was used before CC?
-        <input type="radio" id="yes1" name="regrindUsed" value="YES">
-        <label for="yes1">Yes</label>
-        <input type="radio" id="no1" name="regrindUsed" value="NO">
-        <label for="no1">No</label>
-    </p>
-    <p>More rejections! was there Masterbatch shade or Raw material issue ?
-        <input type="radio" id="yes2" name="shadeIssue" value="YES">
-        <label for="yes2">Yes</label>
-        <input type="radio" id="no2" name="shadeIssue" value="NO">
-        <label for="no2">No</label>
-    </p>
-    <p>More rejections! was there Masterbatch Dosing Unit issue ?
-        <input type="radio" id="yes3" name="dosingIssue" value="YES">
-        <label for="yes3">Yes</label>
-        <input type="radio" id="no3" name="dosingIssue" value="NO">
-        <label for="no3">No</label>
-    </p>
-    <label for="rpm">RPM :</label>
-    <input type="number" id="rpm" name="rpm" min="0" max="40" step="0.05"><br><br>
-    <label for="lineSpeed">Line Speed :</label>
-    <input type="number" id="lineSpeed" name="lineSpeed" min="0" max="4" step="0.01"><br><br>
     <label for="ccFrom">CC from :</label>
     <select id="ccFrom" name="ccFrom">
         <option value="BLUE_072">BLUE_072</option>
@@ -78,6 +48,7 @@
         <option value="GREEN_361">GREEN_361</option>
         <option value="ORANGE_021">ORANGE_021</option>
         <option value="ORANGE_1505">ORANGE_1505</option>
+        <option value="ORANGE_173">ORANGE_173</option>
         <option value="GRAY_CG8">GRAY_CG8</option>
         <option value="GRAY_CG6">GRAY_CG6</option>
         <option value="NATURAL">NATURAL</option>
@@ -110,10 +81,12 @@
         <option value="RED_506">RED_506</option>
         <option value="GREEN_340">GREEN_340</option>
         <option value="GREEN_3298">GREEN_3298</option>
+        <option value="GREEN_7719">GREEN_7719</option>
         <option value="GREEN_321">GREEN_321</option>
         <option value="GREEN_361">GREEN_361</option>
         <option value="ORANGE_021">ORANGE_021</option>
         <option value="ORANGE_1505">ORANGE_1505</option>
+        <option value="ORANGE_173">ORANGE_173</option>
         <option value="GRAY_CG8">GRAY_CG8</option>
         <option value="GRAY_CG6">GRAY_CG6</option>
         <option value="NATURAL">NATURAL</option>
@@ -121,11 +94,42 @@
         <option value="BLUE_2935">BLUE_2935</option>
         <option value="BLU_298">BLU_298</option>
         <option value="BLU_287">BLU_287</option>
+        <option value="BLUE_304">BLUE_304</option>
         <option value="GREEN_355">GREEN_355</option>
         <option value="GREEN_7735">GREEN_7735</option>
     </select><br><br>
     <label for="ccRej">CC Rejection :</label>
     <input type="number" id="ccRej" name="ccRej"><br><br>
+    <label for="rpm">RPM :</label>
+    <input type="number" id="rpm" name="rpm" min="0" max="40" step="0.05"><br><br>
+    <label for="lineSpeed">Line Speed :</label>
+    <input type="number" id="lineSpeed" name="lineSpeed" min="0" max="4" step="0.01"><br><br>
+    <label for="loaderName">Loader Name:</label>
+    <input type="text" id="loaderName" name="loaderName"><br>
+    <p>Whether CC happened during Shift change time?
+        <input type="radio" id="yes" name="shiftChangeTime" value="YES">
+        <label for="yes">Yes</label>
+        <input type="radio" id="no" name="shiftChangeTime" value="NO">
+        <label for="no">No</label>
+    </p>
+    <p>Whether regrind was used before CC?
+        <input type="radio" id="yes1" name="regrindUsed" value="YES">
+        <label for="yes1">Yes</label>
+        <input type="radio" id="no1" name="regrindUsed" value="NO">
+        <label for="no1">No</label>
+    </p>
+    <p>More rejections! was there Masterbatch shade or Raw material issue ?
+        <input type="radio" id="yes2" name="shadeIssue" value="YES">
+        <label for="yes2">Yes</label>
+        <input type="radio" id="no2" name="shadeIssue" value="NO">
+        <label for="no2">No</label>
+    </p>
+    <p>More rejections! was there Master Batch Dosing Unit or Any other Equipment issue ?
+        <input type="radio" id="yes3" name="dosingIssue" value="YES">
+        <label for="yes3">Yes</label>
+        <input type="radio" id="no3" name="dosingIssue" value="NO">
+        <label for="no3">No</label>
+    </p>
     <input type="submit" value="Submit Report"/>
 </form>
 </body>
